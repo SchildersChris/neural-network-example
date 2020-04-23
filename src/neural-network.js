@@ -26,7 +26,7 @@ class NeuralNetwork {
         for (const layer of layers) {
             tmpLayers.push({
                 func: (inputs) => {
-                    const output = NeuralNetwork._sigmoid(NeuralNetwork.dotProduct(inputs, layer.weights) + layer.bias)
+                    const output = NeuralNetwork._sigmoid(NeuralNetwork._dotProduct(inputs, layer.weights) + layer.bias)
                     if (layer.name != null)
                         console.log(`${layer.name} - Output: ${output}`);
 
@@ -44,8 +44,9 @@ class NeuralNetwork {
      * @param arr1
      * @param arr2
      * @return {number}
+     * @private
      */
-    static dotProduct(arr1, arr2) {
+    static _dotProduct(arr1, arr2) {
         let result = 0;
         for (let i = 0; i < Math.min(arr1.length, arr2.length); i++) {
             result += arr1[i] * arr2[i];
