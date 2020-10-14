@@ -58,7 +58,6 @@ class NeuralNetwork {
      * Sigmoid activation function (logistic function)
      * https://en.wikipedia.org/wiki/Sigmoid_function
      *
-     * Euler's angle
      * @private
      */
     static _sigmoid(x) {
