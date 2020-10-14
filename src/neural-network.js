@@ -9,7 +9,7 @@ class NeuralNetwork {
     run(inputs) {
         let output = inputs;
         for (const layer of this.layers) {
-            output = layer.func(!Array.isArray(output) ? Array.from({length: layer.inputs}, () => output): output);
+            output = layer.func(!Array.isArray(output) ? Array.from({length: layer.inputs}, () => output) : output);
         }
         return output;
     }
